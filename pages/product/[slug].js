@@ -234,7 +234,8 @@ export default function DetailProduct(props) {
               <Alert
                 variant="filled"
                 severity="error"
-                sx={{ justifyContent: "center" }}>
+                sx={{ justifyContent: "center" }}
+              >
                 <strong style={{ fontSize: "16px" }}>{errMsg}</strong>
               </Alert>
 
@@ -255,7 +256,8 @@ export default function DetailProduct(props) {
               <Alert
                 variant="filled"
                 severity="success"
-                sx={{ justifyContent: "center" }}>
+                sx={{ justifyContent: "center" }}
+              >
                 <strong style={{ fontSize: "16px" }}>
                   Success add Product to Cart
                 </strong>
@@ -273,7 +275,8 @@ export default function DetailProduct(props) {
         <div className="container-fluid p-0">
           {/* NAVBAR */}
           <nav
-            className={`container-fluid sticky-sm-top shadow py-2 ${style.containerNavbar}`}>
+            className={`container-fluid sticky-sm-top shadow py-2 ${style.containerNavbar}`}
+          >
             <Navbar />
           </nav>
           {/* END OF NAVBAR */}
@@ -316,7 +319,8 @@ export default function DetailProduct(props) {
                             data-bs-slide-to={key}
                             className={key === 0 ? "active" : ""}
                             aria-current={key === 0 ? "true" : ""}
-                            aria-label={`Slide ${key + 1}`}></button>
+                            aria-label={`Slide ${key + 1}`}
+                          ></button>
                         ))}
                       </div>
                       <div className="carousel-inner">
@@ -325,7 +329,8 @@ export default function DetailProduct(props) {
                             key={key}
                             className={`carousel-item ${
                               key === 0 ? "active" : ""
-                            }`}>
+                            }`}
+                          >
                             <img
                               src={`https://res.cloudinary.com/daouvimjz/image/upload/v1676281237/${item?.product_picture}`}
                               className="d-block w-100"
@@ -338,20 +343,24 @@ export default function DetailProduct(props) {
                         className="carousel-control-prev"
                         type="button"
                         data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide="prev">
+                        data-bs-slide="prev"
+                      >
                         <span
                           className="carousel-control-prev-icon"
-                          aria-hidden="true"></span>
+                          aria-hidden="true"
+                        ></span>
                         <span className="visually-hidden">Previous</span>
                       </button>
                       <button
                         className="carousel-control-next"
                         type="button"
                         data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide="next">
+                        data-bs-slide="next"
+                      >
                         <span
                           className="carousel-control-next-icon"
-                          aria-hidden="true"></span>
+                          aria-hidden="true"
+                        ></span>
                         <span className="visually-hidden">Next</span>
                       </button>
                     </div>
@@ -376,7 +385,8 @@ export default function DetailProduct(props) {
                       />
                       <Typography
                         component="legend"
-                        style={{ marginLeft: "8px", color: "#9B9B9B" }}>
+                        style={{ marginLeft: "8px", color: "#9B9B9B" }}
+                      >
                         <span style={{ color: "black" }}>
                           {getProducts.avg_review}{" "}
                         </span>
@@ -410,10 +420,12 @@ export default function DetailProduct(props) {
                                 borderRadius: "50px",
                                 borderColor: "black",
                               }}
-                              onClick={decrement}>
+                              onClick={decrement}
+                            >
                               <span
                                 aria-hidden="true"
-                                style={{ color: "black" }}>
+                                style={{ color: "black" }}
+                              >
                                 -
                               </span>
                             </a>
@@ -421,7 +433,8 @@ export default function DetailProduct(props) {
                           <li class="page-item">
                             <a
                               class="page-link border-0"
-                              style={{ color: "black" }}>
+                              style={{ color: "black" }}
+                            >
                               {quantity}
                             </a>
                           </li>
@@ -429,10 +442,12 @@ export default function DetailProduct(props) {
                             <a
                               class="page-link border rounded-circle border-2 fw-bold"
                               aria-label="Next"
-                              onClick={increment}>
+                              onClick={increment}
+                            >
                               <span
                                 aria-hidden="true"
-                                style={{ color: "black" }}>
+                                style={{ color: "black" }}
+                              >
                                 +
                               </span>
                             </a>
@@ -454,7 +469,8 @@ export default function DetailProduct(props) {
                           id="demo-simple-select-standard"
                           value={color}
                           label="Color *"
-                          onChange={handleChange}>
+                          onChange={handleChange}
+                        >
                           <MenuItem value="">
                             <em>None</em>
                           </MenuItem>
@@ -487,7 +503,8 @@ export default function DetailProduct(props) {
                           id="demo-simple-select-standard"
                           value={size}
                           label="Sizes *"
-                          onChange={handleChangeSize}>
+                          onChange={handleChangeSize}
+                        >
                           <MenuItem value="">
                             <em>None</em>
                           </MenuItem>
@@ -518,7 +535,8 @@ export default function DetailProduct(props) {
                         //   setGetButton('addbag')
                         // }}
                         type="button"
-                        className={`btn btn-outline-secondary rounded-pill me-3 ${style.btnChat}`}>
+                        className={`btn btn-outline-secondary rounded-pill me-3 ${style.btnChat}`}
+                      >
                         Chat
                       </div>
 
@@ -532,21 +550,27 @@ export default function DetailProduct(props) {
                             marginRight: "20px",
                             background: "#DB3022",
                             color: "black",
+                            width: "330px",
                           }}
                           onClick={() => {
                             setGetButton("addbag");
                             handleCheckout();
-                          }}>
+                          }}
+                        >
                           {isLoading ? "Loading..." : "Add to Cart"}
                         </LoadingButton>
                       ) : (
                         <MyButton
                           variant="contained"
                           color="primary"
+                          sx={{
+                            width: "250px",
+                          }}
                           onClick={() => {
                             setGetButton("addbag");
                             handleCheckout();
-                          }}>
+                          }}
+                        >
                           Add to Cart
                         </MyButton>
                       )}
@@ -558,24 +582,29 @@ export default function DetailProduct(props) {
                           color="primary"
                           sx={{
                             borderRadius: "20px",
-
                             background: "#DB3022",
                             color: "black",
+                            width: "250px",
                           }}
                           onClick={() => {
                             setGetButton("buynow");
                             handleCheckout();
-                          }}>
+                          }}
+                        >
                           {isLoading ? "Loading..." : "Buy Now"}
                         </LoadingButton>
                       ) : (
                         <MyButton
                           variant="contained"
                           color="primary"
+                          sx={{
+                            width: "250px",
+                          }}
                           onClick={() => {
                             setGetButton("buynow");
                             handleCheckout();
-                          }}>
+                          }}
+                        >
                           Buy Now
                         </MyButton>
                       )}
@@ -587,7 +616,8 @@ export default function DetailProduct(props) {
 
             {/* PRODUCT INFORMATION */}
             <div
-              className={`mt-5 border-bottom pb-5 border-2 ${style.productInformation}`}>
+              className={`mt-5 border-bottom pb-5 border-2 ${style.productInformation}`}
+            >
               <div className={`mb-4 ${style.subTitle}`}>
                 <h4>Informasi Produk</h4>
               </div>
