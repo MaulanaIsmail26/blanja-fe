@@ -550,7 +550,7 @@ export default function DetailProduct(props) {
                             marginRight: "20px",
                             background: "#DB3022",
                             color: "black",
-                            width: "330px",
+                            width: "2500px",
                           }}
                           onClick={() => {
                             setGetButton("addbag");
