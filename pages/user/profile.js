@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import Navbar from "@/components/organisms/navbar";
 import Link from "next/link";
 import React from "react";
@@ -114,33 +115,33 @@ export default function profile(props) {
   if (selectedDate) {
     console.log("selectedDate--->", moment(selectedDate).format("YYYY-MM-DD"));
   }
-  React.useEffect(() => {
-    // setGetDate
-    let x = profiles?.date_of_birth;
-    let temp = "";
-    let res = [];
-    for (let i = 0; i < x.length; i++) {
-      if (x[i] !== "-") {
-        temp += x[i];
-      }
+  // React.useEffect(() => {
+  //   // setGetDate
+  //   let x = profiles?.date_of_birth;
+  //   let temp = "";
+  //   let res = [];
+  //   for (let i = 0; i < x.length; i++) {
+  //     if (x[i] !== "-") {
+  //       temp += x[i];
+  //     }
 
-      if (x[i] == "-" || x[i + 1] == "T") {
-        res.push(temp);
-        temp = "";
-        continue;
-      }
-    }
-    let fix = "";
-    for (let i = 0; i < res.length; i++) {
-      if (i < res.length - 1) {
-        fix += res[i] + "-";
-      } else {
-        fix += res[i];
-      }
-    }
+  //     if (x[i] == "-" || x[i + 1] == "T") {
+  //       res.push(temp);
+  //       temp = "";
+  //       continue;
+  //     }
+  //   }
+  //   let fix = "";
+  //   for (let i = 0; i < res.length; i++) {
+  //     if (i < res.length - 1) {
+  //       fix += res[i] + "-";
+  //     } else {
+  //       fix += res[i];
+  //     }
+  //   }
 
-    setGetDate(fix);
-  }, []);
+  //   setGetDate(fix);
+  // }, []);
 
   // let dataString = selectedDate.toString();
   // const dateArray = dataString.split(" ");
